@@ -1,14 +1,17 @@
 {
   "dependencies": {
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "nodemon": "^2.0.22"
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^2.0.22",
+    "pg": "^8.10.0"
   },
   "name": "amnil",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "server" : "nodemon index.js"
+    "server": "nodemon index.js"
   },
   "author": "",
   "license": "ISC",

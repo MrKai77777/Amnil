@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+</head>
+<body>
+    <h1>Register</h1>
+    <form action="/register/create" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="firstname">Firstname
+                <input type="text" name="firstname" value="<%= locals.firstname %>" /> </label>
+        </div>
+        <div>
+            <label for="lastname">Lastname
+                <input type="text" name="lastname" value="<%= locals.lastname %>" /> </label>
+        </div>
+        <div>
+            <label for="username">Username
+                <input type="text" name="username" value="<%= locals.username %>" /> </label>
+        </div>
+        <div>
+            <label for="myfile">Upload</label>
+            <input type="file" name="myfile" />
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+   
+</body>
+</html>
