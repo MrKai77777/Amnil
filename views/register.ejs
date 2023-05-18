@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Register</h1>
-    <form action="/register/create" method="post" enctype="multipart/form-data">
+    <form action="/register/createuser" method="post" enctype="form-data">
         <div>
             <label for="firstname">Firstname
                 <input type="text" name="firstname" value="<%= locals.firstname %>" /> </label>
@@ -22,9 +22,13 @@
                 <input type="text" name="username" value="<%= locals.username %>" /> </label>
         </div>
         <div>
+            <label for="password">Password
+                <input type="text" name="password" value="<%= locals.password %>" /> </label>
+        </div>
+        <!-- <div>
             <label for="myfile">Upload</label>
             <input type="file" name="myfile" />
-        </div>
+        </div> -->
         <button type="submit">Submit</button>
     </form>
    
