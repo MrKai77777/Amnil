@@ -23,6 +23,10 @@ router.get('/', (req, res) => {
     res.render('showusers', {users})
 })
 
+router.get('/login',(req,res)=>{
+    res.render('login')
+})
+
 router.get('/listusers', async (req, res) => {
     const users = await db.query(`select * from users_table;`)
     console.log(users)
@@ -51,7 +55,7 @@ router.post('/createuser',async(req,res)=>{
         return res.status(400).send('User already exists.')
     }
     const newUser = await db.query(`insert into users_table(firstname, lastname, username,password) values('${firstname}', '${lastname}', '${username}','${password}')`)
-    res.send('User created')
+    res.render('login')
 })
 
 module.exports = router
