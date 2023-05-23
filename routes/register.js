@@ -48,14 +48,14 @@ router.post('/create',(req, res) => {
 })
 
 router.post('/createuser',async(req,res)=>{
-    const {firstname, lastname, username,password} = req.body
-    await db.query('create table if not exists users_table(id serial primary key, firstname varchar(30), lastname varchar(30), username varchar(20), password varchar(20))')
-    const user = await db.query(`select * from users_table where username = '${username}';`)
+    const {firstname, lastname, username,password,role} = req.body
+    await db.query('create table if not exists userss_table(id serial primary key, firstname varchar(30), lastname varchar(30), username varchar(20), password varchar(20),role varchar(20))')
+    const user = await db.query(`select * from userss_table where username = '${username}';`)
     if(user.rows.length) {
         return res.status(400).send('User already exists.')
     }
-    const newUser = await db.query(`insert into users_table(firstname, lastname, username,password) values('${firstname}', '${lastname}', '${username}','${password}')`)
-    res.render('login')
+    const newUser = await db.query(`insert into userss_table(firstname, lastname, username,password,role) values('${firstname}', '${lastname}', '${username}','${password}','${role}')`)
+    res.send({success : true, msg : "New user created"})
 })
 
 module.exports = router
